@@ -42,38 +42,38 @@ Sonuç olarak, active olarak belirlenen switch StackWise Virtual için sanal bir
     
 ##### _StackWise Virtual Konfigürasyonu_
 
-SV-1#conf t
-SV-1(config)#stackwise-virtual
-SV-1(config-stackwise-virtual)#domain 100
+        SV-1#conf t
+        SV-1(config)#stackwise-virtual
+        SV-1(config-stackwise-virtual)#domain 100
 
-SV-1(config)#interface range fortyGigabitEthernet 1/0/23-24
-SV-1(config-if-range)#stackwise-virtual link 1
+        SV-1(config)#interface range fortyGigabitEthernet 1/0/23-24
+        SV-1(config-if-range)#stackwise-virtual link 1
 
-SV-1(config)#interface fortyGigabitEthernet 1/0/12
-SV-1(config-if)#stackwise-virtual dual-active-detection
-SV-1(config-if)#end
+        SV-1(config)#interface fortyGigabitEthernet 1/0/12
+        SV-1(config-if)#stackwise-virtual dual-active-detection
+        SV-1(config-if)#end
 
-SV-1#wr mem
-Building configuration... [OK]
-SV-1#reload
-Reload command is being issued on Active unit, this will reload the whole stack
-Proceed with reload? [confirm]
+        SV-1#wr mem
+        Building configuration... [OK]
+        SV-1#reload
+        Reload command is being issued on Active unit, this will reload the whole stack
+        Proceed with reload? [confirm]
 ----------------------------------------------
-SV-2#conf t
-SV-2(config)#stackwise-virtual
-SV-2(config-stackwise-virtual)#domain 100
+        SV-2#conf t
+        SV-2(config)#stackwise-virtual
+        SV-2(config-stackwise-virtual)#domain 100
 
-SV-2(config)#interface range fortyGigabitEthernet 1/0/23-24
-SV-2(config-if-range)#stackwise-virtual link 1
+        SV-2(config)#interface range fortyGigabitEthernet 1/0/23-24
+        SV-2(config-if-range)#stackwise-virtual link 1
 
-SV-2(config)#interface fortyGigabitEthernet 1/0/12
-SV-2(config-if)#stackwise-virtual dual-active-detection
-SV-2(config-if)#end
+        SV-2(config)#interface fortyGigabitEthernet 1/0/12
+        SV-2(config-if)#stackwise-virtual dual-active-detection
+        SV-2(config-if)#end
 
-SV-2#wr mem
-Building configuration... [OK]
-SV-2#reload
-Reload command is being issued on Active unit, this will reload the whole stack
-Proceed with reload? [confirm]
+        SV-2#wr mem
+        Building configuration... [OK]
+        SV-2#reload
+        Reload command is being issued on Active unit, this will reload the whole stack
+        Proceed with reload? [confirm]
 
 Yukarıdaki konfigürasyonlarda, ilk başta stackwise-virtual diyerek bu teknolojiyi cihazlarda aktif edildi. Sonra, StackWise Virtual için birer domain oluşturuldu. Daha sonra, hangi interfaceler arasında StackWise Virtual link kullanılacağını o interfaceler altında aktif edildi. Bu portlar otomatik olarak port channel formunda olur. Son olarak da bu iki switch kendi arasında konuşabilsin diye birer interface seçildi ve o interfaceler altında dual-active-detection diyerek aktif duruma getirildi. Bütün bunları konfigüre ettikten sonra sistemi kaydedip yeniden başlatılmazsa StackWise Virtual teknolojisi çalışmayacaktır. Bu yüzden en sonunda reboot komutu ile sistemi yeniden başlatıldı. Ve artık fiziksel olarak iki tane olan Cisco Catalyst 9000 serisi switchler mantıksal olarak tek bir switch haline gelmiş olur.
