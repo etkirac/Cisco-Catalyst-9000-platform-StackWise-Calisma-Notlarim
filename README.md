@@ -8,16 +8,24 @@ Ek olarak, StackWise Virtual , uygulamaların yanıt süresini geliştirmek içi
 StacWise Virtual’ın temel faydalarını şöyle sıralayabiliriz:
 
 •	Loop içeren bir topoloji riskini azaltmak,
+
 •	Erişim (Access) katmandan artan bant genişliği sayesinde mevcut yatırımlardan daha iyi bir geri dönüş sağlamak,
+
 •	Konfigürasyon hatalarını azaltmak,
+
 •	Hot Standby Routing Protocol (HSRP), GLBP ve VRRP gibi First Hop Redundancy Protokollerin (FHRP) ortadan kaldırmak,
+
 •	Tek bir noktadan yönetimi sağlamak,
+
 •	Daha az operasyonel arıza noktası sağlamaktır.
 
 Bir StackWise Virtual domain’de bir switch “active” diğer switch “standby” olarak belirlenir. Bütün control plane işlemleri active olarak belirlenen switch tarafından yönetilir. Bunlar ;
 •	Simple Network Management Protocol (SNMP), Telnet, Secure Shell (SSH) Protocol
+
 •	Layer 2 protokolleri (Bridge Protocol Data Units [BPDUs], Protocol Data Units [PDUs], Link Aggregation Control Protocol [LACP], vb. )
+
 •	Layer 3 protokolleri (routing protocols, vb.)
+
 Active olarak belirlenen switchin başına bir şey gelmesi durumunda beklemede olan standby switch hemen active rolünü üstlenir. Bu durumları gözlemlemek için aşağıdaki komutu kullanabiliriz:
 
         Stackwise-Virtual#show redundancy
