@@ -6,6 +6,7 @@ Catalyst 9000 serisi iki switchin tek bir switch gibi davranmasına izin veren b
 Ek olarak, StackWise Virtual , uygulamaların yanıt süresini geliştirmek için artırılmış bant genişliğiyle kesintisiz iletişim sağlayan Stateful Switch Over (SSO) , Non-Stop Forwarding (NSF) ve Multi-chassis EtherChannel (MEC) gibi Cisco yeniliklerini içerir.
 
 StacWise Virtual’ın temel faydalarını şöyle sıralayabiliriz:
+
 •	Loop içeren bir topoloji riskini azaltmak,
 •	Erişim (Access) katmandan artan bant genişliği sayesinde mevcut yatırımlardan daha iyi bir geri dönüş sağlamak,
 •	Konfigürasyon hatalarını azaltmak,
