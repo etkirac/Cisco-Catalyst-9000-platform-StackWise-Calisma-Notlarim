@@ -43,7 +43,9 @@ Eğer bu süreleri ve MAC adreslerini görüntelemek istersek kullanacağımız 
 Eğer sistem yeniden başlatılırsa, bu sefer ilk olarak active belirlenen switch yani  MAC adresini türetmiş switch standby olup diğer switch active olursa sistem yeniden başlatılmadan önceki MAC adresi ve sonrasında türetilen MAC adresi farklılık gösterecektir. Çünkü bu sefer diğer switch sistem açılırken active olduğu için MAC adresini o üretecektir. Bu çoğu ortam için sorun teşkil etmez, çünkü sistem başlatıldığında MAC adreslerinin reklamını yapan ARP ( Address Resolution Protocol) frameleri gönderilir. 
 
 Sonuç olarak, active olarak belirlenen switch StackWise Virtual için sanal bir MAC adresi türetecektir. Active olan switchin herhangi bir nedenden dolayı hata vermesiyle standby durumunda olan switch active switch olacaktır. Ama belirlenen sanal MAC adresi değişmeyecektir. 
+
 1.Sistem yeniden başlatılırsa ve ilk başta belirlenen active switch hala düzelmediyse o standby durumunda kalacaktır, bu yüzden StackWise Virtual için MAC adres türetemeyecektir. Bu durumda sonradan active olan switch MAC adresini belirleyecektir. 
+
 2.Eğer sistem yeniden başlatılmazsa ve eğer sonradan active olan switchin MAC adres türetmesini istersek aşağıdaki komutu çalıştırabiliriz:
 
     SV-1#stack-mac update force
