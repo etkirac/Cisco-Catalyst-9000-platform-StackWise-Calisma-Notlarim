@@ -30,7 +30,7 @@ Active olarak belirlenen switchin başına bir şey gelmesi durumunda beklemede 
 
         Stackwise-Virtual#show redundancy
         
-##### _StackWise Sanal MAC adresleri_
+### _StackWise Sanal MAC adresleri_
 
 StackWise Virtual’da active duruma geçen switchin bütün Layer 3 interfacelerine bir MAC adresi atanır ve bu MAC adresleri, Cisco 9000 serisi switchlerin kendisinde bulunan EEPROM tarafından türetilir. Active olarak seçilen switch StackWise Virtual domain için de bir MAC adresi türetecektir. Ayrıca, active olan switchin başına bir durum gelse bile bu domain için belirlenen MAC adresi değişmeyecek ve kalıcı olacaktır. Bunun nedeni MAC adresini herhangi bir aksilik durumunda tekrar güncellememektedir. Bu durum varsayılan olarak böyledir, eğer bu süreyi değiştirmek istersek aşağıdaki komutu kullanabiliriz:
 
@@ -50,7 +50,7 @@ Sonuç olarak, active olarak belirlenen switch StackWise Virtual için sanal bir
 
     SV-1#stack-mac update force
     
-##### _StackWise Virtual Konfigürasyonu_
+### _StackWise Virtual Konfigürasyonu_
 
         SV-1#conf t
         SV-1(config)#stackwise-virtual
